@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Student Management System</title>
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+<header class="topbar">
+  <h1>🎓 Student Management System</h1>
+  <p>Manage student records easily</p>
+</header>
+
+<main class="container">
+  <section class="card">
+    <h2 id="form-title">Add New Student</h2>
+    <form id="student-form">
+      <input type="hidden" id="student-id" />
+      <div class="grid">
+        <div class="field">
+          <label>Full Name</label>
+          <input type="text" id="name" required placeholder="John Doe" />
+        </div>
+        <div class="field">
+          <label>Roll No</label>
+          <input type="text" id="roll" required placeholder="2025001" />
+        </div>
+        <div class="field">
+          <label>Email</label>
+          <input type="email" id="email" required placeholder="john@example.com" />
+        </div>
+        <div class="field">
+          <label>Course</label>
+          <select id="course" required>
+            <option value="">Select course</option>
+            <option>Computer Science</option>
+            <option>Mathematics</option>
+            <option>Physics</option>
+            <option>Business</option>
+            <option>Design</option>
+          </select>
+        </div>
+        <div class="field">
+          <label>Year</label>
+          <select id="year" required>
+            <option value="">Select year</option>
+            <option>1</option><option>2</option><option>3</option><option>4</option>
+          </select>
+        </div>
+        <div class="field">
+          <label>Phone</label>
+          <input type="tel" id="phone" placeholder="+1 555 0100" />
+        </div>
+      </div>
+      <div class="actions">
+        <button type="submit" id="submit-btn" class="btn primary">Add Student</button>
+        <button type="button" id="cancel-btn" class="btn ghost hidden">Cancel</button>
+      </div>
+    </form>
+  </section>
+
+  <section class="card">
+    <div class="list-header">
+      <h2>Students <span id="count" class="badge">0</span></h2>
+      <input type="search" id="search" placeholder="Search by name, roll, course..." />
+    </div>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>Roll</th><th>Name</th><th>Email</th><th>Course</th><th>Year</th><th>Phone</th><th>Actions</th>
+          </tr>
+        </thead>
+        <tbody id="students-body"></tbody>
+      </table>
+      <p id="empty" class="empty">No students yet. Add your first one above.</p>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">Built with HTML, CSS & JavaScript · Data saved in your browser</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
